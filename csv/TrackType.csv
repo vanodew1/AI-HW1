@@ -1,0 +1,18 @@
+,Saddar (Hub),II Chundrigar Road,Clifton,DHA,PECHS,Gulshan-e-Iqbal,Gulistan-e-Johar,North Nazimabad,Nazimabad,Liaquatabad,FB Area,SITE Area,Orangi Town,Baldia Town,Lyari,Malir,Korangi
+Saddar (Hub),0,M,M,-1,S,-1,-1,-1,-1,S,-1,-1,-1,-1,N,-1,-1
+II Chundrigar Road,M,0,M,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
+Clifton,M,M,0,M,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
+DHA,-1,-1,M,0,-1,S,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,S
+PECHS,S,-1,-1,-1,0,M,-1,-1,S,-1,-1,-1,-1,-1,-1,-1,-1
+Gulshan-e-Iqbal,-1,-1,-1,S,M,0,M,-1,-1,-1,S,-1,-1,-1,-1,M,-1
+Gulistan-e-Johar,-1,-1,-1,-1,-1,M,0,-1,-1,-1,-1,-1,-1,-1,-1,S,S
+North Nazimabad,-1,-1,-1,-1,-1,-1,-1,0,S,S,M,-1,-1,-1,-1,-1,-1
+Nazimabad,-1,-1,-1,-1,S,-1,-1,S,0,S,-1,S,-1,-1,-1,-1,-1
+Liaquatabad,S,-1,-1,-1,-1,-1,-1,S,S,0,N,-1,-1,-1,-1,-1,-1
+FB Area,-1,-1,-1,-1,-1,S,-1,M,-1,N,0,-1,-1,-1,-1,-1,-1
+SITE Area,-1,-1,-1,-1,-1,-1,-1,-1,S,-1,-1,0,S,S,-1,-1,-1
+Orangi Town,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,S,0,N,-1,-1,-1
+Baldia Town,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,S,N,0,N,-1,-1
+Lyari,N,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,N,0,-1,-1
+Malir,-1,-1,-1,-1,-1,M,S,-1,-1,-1,-1,-1,-1,-1,-1,0,S
+Korangi,-1,-1,-1,S,-1,-1,S,-1,-1,-1,-1,-1,-1,-1,-1,S,0
