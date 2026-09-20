@@ -17,7 +17,7 @@ def findCell(grid, marker): #returns the (row,col) of S or G
         for c in range(len(grid[r])):
             if grid[r][c] == marker:
                 return (r,c)
-    raise ValueError("no" + marker + "in the grid")
+    raise ValueError("no " + marker + " in the grid")
 
 class RobotProblem(SearchProblem):
     def __init__(self, grid, start=None, goal=None):
