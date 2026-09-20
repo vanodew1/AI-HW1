@@ -15,6 +15,7 @@ purely through this interface.
 """
 
 import util
+import itertools
 
 class SearchProblem:
     """
@@ -160,5 +161,47 @@ def searchWithStopovers(problem, stopovers):
     which stopovers were visited (see assignment spec for exact output
     requirements).
     """
-    "*** YOUR STOPOVER-ROUTING CODE HERE ***"
-    util.raiseNotDefined()
+    hub = problem.getStartState()
+
+    # clean the stopover list: no repeats and no hub
+    stops = []
+    for place in stopovers:
+        if place != hub and place not in stops:
+            stops.append(place)
+
+    if len(stops) == 0: # nothing to deliver, so no driving
+        return [], 0, []
+
+    # run A* between every pair of places once and remember the results
+    # legs[(a, b)] = (actions, cost) for the trip from a to b
+    places = [hub] + stops
+    legs = {}
+    for a in places:
+        for b in places:
+            if a != b:
+                legProblem = problem.makeLegProblem(a, b) # same map, new start and goal
+                actions, cost, nodes = aStarSearch(legProblem)
+                if actions is None: # this leg can not be driven at all
+                    return None, float("inf"), None
+                legs[(a, b)] = (actions, cost)
+
+    # try every order of the stopovers and keep the cheapest round trip
+    # (this is k! orders for k stopovers, fine for a small delivery run)
+    bestOrder = None
+    bestCost = float("inf")
+    for order in itertools.permutations(stops):
+        route = [hub] + list(order) + [hub] # hub, stopovers, back to hub
+        total = 0
+        for i in range(len(route) - 1):
+            total += legs[(route[i], route[i + 1])][1]
+        if total < bestCost:
+            bestCost = total
+            bestOrder = list(order)
+
+    # join the A* legs of the best order into one route
+    fullRoute = []
+    route = [hub] + bestOrder + [hub]
+    for i in range(len(route) - 1):
+        fullRoute += legs[(route[i], route[i + 1])][0]
+
+    return fullRoute, bestCost, bestOrder

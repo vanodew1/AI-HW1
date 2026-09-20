@@ -87,3 +87,6 @@ class CourierProblem(SearchProblem):
 
     def getHeuristic(self, state): #returns the heuristic value of current state
         return self.map.aerial[state][self.goal]
+
+    def makeLegProblem(self, start, goal): # same map with a new start and goal, used for the stopover route
+        return CourierProblem(self.map, start, goal)
